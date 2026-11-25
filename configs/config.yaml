@@ -1,0 +1,65 @@
+# BCI Competition IV-2a (BNCI2014_001) Cross-Subject MI Decoding Configuration
+
+project:
+  name: "BCI_IV_2a_MI_EA_Conformer"
+  seed: 42
+  data_dir: "data/mne_data"
+  results_dir: "results"
+
+dataset:
+  subjects: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  quick_subjects: [1, 2, 3]  # Quick smoke-test subset of LOSO target subjects (trained on all other subjects)
+  sfreq: 250.0
+  l_freq: 4.0
+  h_freq: 40.0
+  tmin: 0.5
+  tmax: 4.0
+  n_classes: 4
+  class_names: ["left_hand", "right_hand", "feet", "tongue"]
+  # Standard 22 EEG channels in BCI Competition IV-2a
+  channels: [
+    "Fz", "FC3", "FC1", "FCz", "FC2", "FC4",
+    "C5", "C3", "C1", "Cz", "C2", "C4", "C6",
+    "CP3", "CP1", "CPz", "CP2", "CP4",
+    "P1", "Pz", "P2", "POz"
+  ]
+
+alignment:
+  ea_regularization: 0.001
+
+augmentation:
+  sr_prob: 0.5
+  n_segments: 8
+  time_mask_prob: 0.2
+  time_mask_max_ratio: 0.08
+  freq_mask_prob: 0.0
+  noise_std: 0.02
+
+fbcsp_riemannian:
+  filter_bands:
+    - [4.0, 8.0]
+    - [8.0, 12.0]
+    - [12.0, 16.0]
+    - [16.0, 20.0]
+    - [20.0, 24.0]
+    - [24.0, 28.0]
+    - [28.0, 32.0]
+    - [32.0, 36.0]
+    - [36.0, 40.0]
+  n_csp_components: 4
+  cov_estimator: "lwf"
+  classifier_c: 1.0
+
+training:
+  epochs: 80
+  batch_size: 64
+  lr: 0.0008
+  weight_decay: 0.0005
+  val_ratio: 0.15
+  patience: 18
+
+conformer:
+  emb_size: 40
+  depth: 2
+  n_heads: 4
+  dropout: 0.3

@@ -1,0 +1,100 @@
+{
+  "target_subjects": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "loso_summary": [
+    {
+      "model": "EEGConformer_EA_Aug",
+      "use_ea": true,
+      "use_aug": true,
+      "accuracy_pct_mean": 51.543,
+      "accuracy_pct_std": 15.864,
+      "kappa_mean": 0.354,
+      "macro_f1_mean": 0.505
+    },
+    {
+      "model": "EEGConformer_NoEA",
+      "use_ea": false,
+      "use_aug": false,
+      "accuracy_pct_mean": 43.172,
+      "accuracy_pct_std": 17.683,
+      "kappa_mean": 0.242,
+      "macro_f1_mean": 0.391
+    },
+    {
+      "model": "EEGNet_EA",
+      "use_ea": true,
+      "use_aug": false,
+      "accuracy_pct_mean": 50.077,
+      "accuracy_pct_std": 16.337,
+      "kappa_mean": 0.334,
+      "macro_f1_mean": 0.481
+    },
+    {
+      "model": "EEGNet_NoEA",
+      "use_ea": false,
+      "use_aug": false,
+      "accuracy_pct_mean": 43.73,
+      "accuracy_pct_std": 16.845,
+      "kappa_mean": 0.25,
+      "macro_f1_mean": 0.402
+    },
+    {
+      "model": "FBCSP_Riemannian_EA",
+      "use_ea": true,
+      "use_aug": false,
+      "accuracy_pct_mean": 41.416,
+      "accuracy_pct_std": 10.195,
+      "kappa_mean": 0.219,
+      "macro_f1_mean": 0.403
+    },
+    {
+      "model": "FBCSP_Riemannian_NoEA",
+      "use_ea": false,
+      "use_aug": false,
+      "accuracy_pct_mean": 33.874,
+      "accuracy_pct_std": 6.901,
+      "kappa_mean": 0.118,
+      "macro_f1_mean": 0.29
+    },
+    {
+      "model": "ShallowConvNet_EA",
+      "use_ea": true,
+      "use_aug": false,
+      "accuracy_pct_mean": 49.364,
+      "accuracy_pct_std": 14.741,
+      "kappa_mean": 0.325,
+      "macro_f1_mean": 0.482
+    }
+  ],
+  "gradcam_top5": [
+    {
+      "channel": "Cz",
+      "gradcam_weight_mean": 0.05913
+    },
+    {
+      "channel": "C3",
+      "gradcam_weight_mean": 0.05902
+    },
+    {
+      "channel": "CP3",
+      "gradcam_weight_mean": 0.05482
+    },
+    {
+      "channel": "C1",
+      "gradcam_weight_mean": 0.05417
+    },
+    {
+      "channel": "C4",
+      "gradcam_weight_mean": 0.05327
+    }
+  ]
+}

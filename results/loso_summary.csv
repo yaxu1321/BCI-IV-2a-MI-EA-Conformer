@@ -1,0 +1,8 @@
+model,use_ea,use_aug,accuracy_pct_mean,accuracy_pct_std,kappa_mean,macro_f1_mean
+EEGConformer_EA_Aug,True,True,51.543,15.864,0.354,0.505
+EEGConformer_NoEA,False,False,43.172,17.683,0.242,0.391
+EEGNet_EA,True,False,50.077,16.337,0.334,0.481
+EEGNet_NoEA,False,False,43.73,16.845,0.25,0.402
+FBCSP_Riemannian_EA,True,False,41.416,10.195,0.219,0.403
+FBCSP_Riemannian_NoEA,False,False,33.874,6.901,0.118,0.29
+ShallowConvNet_EA,True,False,49.364,14.741,0.325,0.482
